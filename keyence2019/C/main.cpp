@@ -33,23 +33,15 @@ void solve(long long N, std::vector<long long> A, std::vector<long long> B){
     }
     sort(C.begin(),C.end());
     long long cnt = 0;
-    long long d;
+    long long d=0;
     long long li=N-1;
-    cnt += C[0]<0;
     for(long long i=0;i<N&&C[i]<0;i++){
-        d=C[i];
+        d+=C[i];
         cnt++;
-        while(1){
-            if(C[li]+d<0){
-                C[li]=0;
-                li--;
-                cnt++;
-                d=C[li]+d;
-            }else{
-                C[li]+=d;
-                break;
-            }
-        }
+    }
+    for(long long i=N-1;i>0&&d<0;i--){
+        d+=C[i];
+        cnt++;
     }
     cout<<cnt<<endl;
 
