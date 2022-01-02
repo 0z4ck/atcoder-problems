@@ -21,6 +21,37 @@ using namespace std;
 
 
 void solve(long long N, std::vector<long long> A, std::vector<long long> B){
+    vector<long long> C(N);
+    long long s=0;
+    for(int i=0;i<N;i++){
+        C[i]=A[i]-B[i];
+        s+=C[i];
+    }
+    if(s<0){
+        cout<<-1<<endl;
+        return;
+    }
+    sort(C.begin(),C.end());
+    int cnt = 0;
+    int d;
+    int li=N-1;
+    cnt += C[0]<0;
+    for(int i=0;i<N&&C[i]<0;i++){
+        d=C[i];
+        cnt++;
+        while(1){
+            if(C[li]+d<0){
+                C[li]=0;
+                li--;
+                cnt++;
+                d=C[li]+d;
+            }else{
+                C[li]+=d;
+                break;
+            }
+        }
+    }
+    cout<<cnt<<endl;
 
 }
 
