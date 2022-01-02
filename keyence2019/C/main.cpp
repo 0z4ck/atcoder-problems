@@ -23,7 +23,7 @@ using namespace std;
 void solve(long long N, std::vector<long long> A, std::vector<long long> B){
     vector<long long> C(N);
     long long s=0;
-    for(int i=0;i<N;i++){
+    for(long long i=0;i<N;i++){
         C[i]=A[i]-B[i];
         s+=C[i];
     }
@@ -32,11 +32,11 @@ void solve(long long N, std::vector<long long> A, std::vector<long long> B){
         return;
     }
     sort(C.begin(),C.end());
-    int cnt = 0;
-    int d;
-    int li=N-1;
+    long long cnt = 0;
+    long long d;
+    long long li=N-1;
     cnt += C[0]<0;
-    for(int i=0;i<N&&C[i]<0;i++){
+    for(long long i=0;i<N&&C[i]<0;i++){
         d=C[i];
         cnt++;
         while(1){
