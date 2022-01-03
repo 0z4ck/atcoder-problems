@@ -23,7 +23,7 @@ const string YES = "Yes";
 const string NO = "No";
 
 void solve(long long a, long long b, long long c){
-    if ( a+b+2*sqrt(a*b)<c)
+    if ( a+b+sqrt(4*a*b)<c)
         cout<<YES<<endl;
     else
         cout<<NO<<endl;
