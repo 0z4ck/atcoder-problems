@@ -31,8 +31,8 @@ void solve(long long N, std::vector<long long> b){
             }
         }
         if(ans[i]==0){
-        cout<<-1<<endl;
-        return;
+            cout<<-1<<endl;
+            return;
         }
     }
     for (int i=0;i<N;i++)
