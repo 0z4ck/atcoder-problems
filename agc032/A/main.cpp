@@ -21,6 +21,23 @@ using namespace std;
 
 
 void solve(long long N, std::vector<long long> b){
+    vector<long long> ans(N,0);
+    for(int i=N-1;i>=0;i--){
+        for(int j=i;j>=0;j--){
+            if(j+1==b[j]){
+                ans[i]=b[j];
+                b.erase(b.begin()+j);
+                break;
+            }
+        }
+        if(ans[i]==0){
+        cout<<-1<<endl;
+        return;
+        }
+    }
+    for (int i=0;i<N;i++)
+        cout<<ans[i]<<endl;
+
 
 }
 
