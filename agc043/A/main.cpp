@@ -21,6 +21,39 @@ using namespace std;
 
 
 void solve(long long H, long long W, std::vector<std::string> s){
+    vector<vector<int>> cost(H, vector<int>(W,0));
+    int c=0;
+    queue<vector<int>> q[2];
+    q[0].push(vector<int> {0,0,s[0][0]%2});
+
+    vector<vector<bool>> fl(H,vector<bool>(W,true));
+    
+    while(!(q[c%2].empty()&&q[c%2^1].empty())){
+        vector<int> v = q[c%2].front();q[c%2].pop();
+        if(H>v[0]+1 && fl[v[0]+1][v[1]]){
+            if(v[2]==s[v[0]+1][v[1]]%2)
+                if (v[0]+1==H-1&&v[1]==W-1)
+                    break;
+                else
+                    q[c%2].push(vector<int> {v[0]+1,v[1],v[2]});
+            else
+                q[c%2^1].push(vector<int> {v[0]+1,v[1],v[2]^1});
+        }
+        if(W>v[1]+1 && fl[v[0]][v[1]+1]){
+            if(v[2]==s[v[0]][v[1]+1]%2)
+                if (v[0]==H-1&&v[1]+1==W-1)
+                    break;
+                else
+                    q[c%2].push(vector<int> {v[0],v[1]+1,v[2]});
+            else
+                q[c%2^1].push(vector<int> {v[0],v[1]+1,v[2]^1});
+        }
+        fl[v[0]][v[1]]=false;
+        if(q[c%2].empty())
+            c++;
+    }
+    cout<<c<<endl;
+
 
 }
 
