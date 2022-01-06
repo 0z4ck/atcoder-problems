@@ -21,6 +21,18 @@ using namespace std;
 
 
 void solve(long long N, std::vector<std::string> S){
+    map<string, int> mp;
+    int num=0;
+    string name;
+    for(int i=0;i<N;i++){
+        mp[S[i]]++;
+        if(mp[S[i]]>=num){
+            num=mp[S[i]];
+            name = S[i];
+        }
+    }
+
+    cout <<name<<endl;
 
 }
 
