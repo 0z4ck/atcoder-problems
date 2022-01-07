@@ -21,6 +21,16 @@ using namespace std;
 
 
 void solve(long long N, std::vector<long long> A){
+    vector<int> map(100001,0);
+    int cnt = 0;
+    for(auto &a: A){
+        map[a]++;
+        if(map[a]>=2)
+            cnt++;
+    }
+
+    cout <<cnt <<endl;
+
 
 }
 
