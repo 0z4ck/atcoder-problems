@@ -19,17 +19,46 @@
 #include <cassert>
 using namespace std;
 
+void print_2queue(queue<vector<int>> q, queue<vector<int>> q2)
+{
+  cout<<"q1 = queue ( ";
+  while (!q.empty())
+  {
+    vector<int> v = q.front();
+    std::cout << "{"<<v[0]<<","<<v[1] << "},";
+    q.pop();
+  }
+  cout<<" ) , q2 = queue ( ";
+  while (!q2.empty())
+  {
+    auto v = q2.front();
+    std::cout << "{"<<v[0]<<","<<v[1] << "},";
+    q2.pop();
+  }
+
+  std::cout <<")"<< std::endl;
+}
 
 void solve(long long H, long long W, std::vector<std::string> s){
     vector<vector<int>> cost(H, vector<int>(W,0));
     int c=0;
     queue<vector<int>> q[2];
-    q[0].push(vector<int> {0,0,s[0][0]%2});
+    q[0].push(vector<int> {-1,0,0});
 
     vector<vector<bool>> fl(H,vector<bool>(W,true));
     
     while(!(q[c%2].empty()&&q[c%2^1].empty())){
+        //cerr<<"loop start"<<endl;
+        //print_2queue(q[0],q[1]);
         vector<int> v = q[c%2].front();q[c%2].pop();
+        //cerr<< v[0]<<" " <<v[1] <<endl;
+        if (v[0]>-1&&!fl[v[0]][v[1]]){
+            if(q[c%2].empty())
+                c++;
+            continue;
+        }
+        //cerr<<c<<endl;
+        //cerr<<" start down" <<endl;
         if(H>v[0]+1 && fl[v[0]+1][v[1]]){
             if(v[2]==s[v[0]+1][v[1]]%2)
                 if (v[0]+1==H-1&&v[1]==W-1)
@@ -39,7 +68,8 @@ void solve(long long H, long long W, std::vector<std::string> s){
             else
                 q[c%2^1].push(vector<int> {v[0]+1,v[1],v[2]^1});
         }
-        if(W>v[1]+1 && fl[v[0]][v[1]+1]){
+        //cerr<<" start right" <<endl;
+        if(v[0]>-1&&W>v[1]+1 && fl[v[0]][v[1]+1]){
             if(v[2]==s[v[0]][v[1]+1]%2)
                 if (v[0]==H-1&&v[1]+1==W-1)
                     break;
@@ -48,11 +78,15 @@ void solve(long long H, long long W, std::vector<std::string> s){
             else
                 q[c%2^1].push(vector<int> {v[0],v[1]+1,v[2]^1});
         }
-        fl[v[0]][v[1]]=false;
+        //cerr<<" donedown right" <<endl;
+        if (v[0]>-1)
+            fl[v[0]][v[1]]=false;
+        //cerr<<" flag updated" <<endl;
         if(q[c%2].empty())
             c++;
+        //cerr<<"c incremented" <<endl;
     }
-    cout<<c<<endl;
+    cout<<c/2<<endl;
 
 
 }
