@@ -23,7 +23,7 @@ using namespace std;
 void solve(long long K){
     vector<char> c;
     for(int i=0;K>>i;i++){
-        if ((K>>i)%2)
+        if ((K>>i)&1)
             c.push_back('2');
         else
             c.push_back('0');
