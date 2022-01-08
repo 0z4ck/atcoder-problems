@@ -21,6 +21,16 @@ using namespace std;
 
 
 void solve(long long N, long long K, std::vector<long long> P){
+    vector<long long> Px(P.begin(),P.begin()+K);
+
+    sort(Px.begin(),Px.end());
+
+    cout << Px[0] <<endl;
+
+    for(int i=K;i<N;i++){
+        Px.insert(upper_bound(Px.begin(), Px.end(), P[i]), P[i] );
+        cout << Px[i-K+1]<<endl;
+    }
 
 }
 
