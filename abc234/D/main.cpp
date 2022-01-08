@@ -32,7 +32,7 @@ void solve(long long N, long long K, std::vector<long long> P){
         if(P[i]<=Px[i-K-dum])
             dum++;
         else
-            Px.insert(upper_bound(Px.begin()+i-K, Px.end(), P[i]), P[i] );
+            Px.insert(upper_bound(Px.begin()+i-K-dum, Px.end(), P[i]), P[i] );
         cout << Px[i-K+1-dum]<<endl;
     }
 
