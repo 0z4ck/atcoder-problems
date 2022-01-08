@@ -21,19 +21,28 @@ using namespace std;
 
 
 void solve(long long N, long long K, std::vector<long long> P){
-    vector<long long> Px(P.begin(),P.begin()+K);
+    multiset<long long> ms;
+    multiset<long long>::iterator it;
 
-    sort(Px.begin(),Px.end());
+    for(int i=0;i<K;i++)
+        ms.insert(P[i]);
+
+    it = ms.begin()+K;
 
     cout << Px[0] <<endl;
 
     long long dum=0;
     for(int i=K;i<N;i++){
-        if(P[i]<=Px[i-K-dum])
+        it = ms.begin()+i-K-dum;
+        long long Pi = ms.extract(it);
+        if(P[i]<=Pi)
             dum++;
         else
-            Px.insert(upper_bound(Px.begin()+i-K-dum, Px.end(), P[i]), P[i] );
-        cout << Px[i-K+1-dum]<<endl;
+            //Px.insert(upper_bound(Px.begin()+i-K-dum, Px.end(), P[i]), P[i] );
+            ms.insert(P[i] );
+        it = ms.begin()+i-K+1-dum;
+        long long ans = ms.extract(it);
+        cout << ans<<endl;
     }
 
 }
