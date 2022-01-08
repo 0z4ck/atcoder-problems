@@ -27,9 +27,13 @@ void solve(long long N, long long K, std::vector<long long> P){
 
     cout << Px[0] <<endl;
 
+    long long dum=0;
     for(int i=K;i<N;i++){
-        Px.insert(upper_bound(Px.begin(), Px.end(), P[i]), P[i] );
-        cout << Px[i-K+1]<<endl;
+        if(P[i]<=Px[i-K-dum])
+            dum++;
+        else
+            Px.insert(upper_bound(Px.begin(), Px.end(), P[i]), P[i] );
+        cout << Px[i-K+1-dum]<<endl;
     }
 
 }
