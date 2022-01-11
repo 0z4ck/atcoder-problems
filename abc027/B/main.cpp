@@ -29,7 +29,7 @@ void solve(long long N, std::vector<long long> a){
         cout<<-1<<endl;
     else{
         for(int i=0;i<N;i++)
-            if(S[i+1]/(i+1)!=S[N]/N)
+            if(S[i+1]!=S[N]/N*(i+1))
                 cnt++;
         cout<<cnt<<endl;
     }
