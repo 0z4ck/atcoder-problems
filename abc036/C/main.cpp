@@ -62,18 +62,15 @@ void solve(long long N, std::vector<long long> a){
     map<int, int> mp;
 
     vector<pair<int, int>> vp(N);
-    vector<vector<long long>> dv(N);
 
     for(int i=0;i<N;i++){
         vp[i]=make_pair(a[i],i);
-        dv[i]={a[i],i};
         if(!mp[a[i]]++) 
             cnt++;
     }
     vector<int> ans(N);
-    sort(dv.begin(),dv.end());
     sort(vp.begin(),vp.end());
-    int i=0,j=0;
+    int i=0;
     int last = vp[0].first;
     for(auto &p: vp){
         if(i&&p.first==last)
