@@ -22,16 +22,17 @@ using namespace std;
 
 void solve(long long N, long long K, std::vector<long long> P){
     set<long long> s;
-    for(int i=0;i<K-1;i++)
+    for(int i=0;i<K;i++)
         s.insert(P[i]);
 
     set<long long>::iterator it=s.begin();
    
-    for(int i=0;i<N-K+1;i++){
-        s.insert(P[K-1+i]);
-        cout<<*it<<endl;
+    cout<<*it<<endl;
+    for(int i=0;i<N-K;i++){
+        s.insert(P[K+i]);
         if(P[K+i]>*it)
             it++;
+        cout<<*it<<endl;
     }
 
 }
