@@ -21,6 +21,12 @@ using namespace std;
 
 
 void solve(long long n, long long m){
+    double a = n%12*30+(m*0.5);
+    double b = m*6;
+    if (180<abs(a-b))
+        cout<<360-abs(a-b)<<endl;
+    else
+        cout<<abs(a-b)<<endl;
 
 }
 
