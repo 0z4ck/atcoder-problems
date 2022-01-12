@@ -31,6 +31,13 @@ std::ostream& operator<<(std::ostream& s, const std::vector<T>& v)
     }
     return s << ']';
 }
+template<typename T,typename T2>
+std::ostream& operator<<(std::ostream& s, const std::pair<T,T2>& p)
+{
+    s.put('{');
+    s<<p.first<<": "<<p.second;
+    return s << '}';
+}
 template<typename T>
 std::ostream& operator<<(std::ostream& s, const std::vector<std::vector<T>>& v)
 {
@@ -45,8 +52,8 @@ std::ostream& operator<<(std::ostream& s, const std::vector<std::vector<T>>& v)
     }
     return s;
 }
-template<typename T>
-std::ostream& operator<<(std::ostream& s, const std::map<T,T>& mp)
+template<typename T,typename T2>
+std::ostream& operator<<(std::ostream& s, const std::map<T,T2>& mp)
 {
     s.put('{');
     char comma[3] = {'\0', ' ', '\0'};
@@ -72,7 +79,6 @@ void solve(long long N, std::vector<long long> a){
     sort(vp.begin(),vp.end());
     int i=0;
     int last = vp[0].first;
-    //DBG(mp);
     for(auto &p: vp){
         if(i&&p.first==last)
             i--;
