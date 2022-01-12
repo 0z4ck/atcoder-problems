@@ -59,7 +59,7 @@ std::ostream& operator<<(std::ostream& s, const std::map<T,T>& mp)
 
 void solve(long long N, std::vector<long long> a){
     int cnt = 0;
-    map<int, int> mp;
+    map<long, int> mp;
 
     vector<pair<int, int>> vp(N);
 
@@ -72,6 +72,7 @@ void solve(long long N, std::vector<long long> a){
     sort(vp.begin(),vp.end());
     int i=0;
     int last = vp[0].first;
+    //DBG(mp);
     for(auto &p: vp){
         if(i&&p.first==last)
             i--;
