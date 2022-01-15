@@ -86,6 +86,7 @@ void solve(long long H, long long W, std::vector<std::string> s){
             c++;
         //cerr<<"c incremented" <<endl;
     }
+    cerr<<c<<endl;
     cout<<c/2<<endl;
 
 
