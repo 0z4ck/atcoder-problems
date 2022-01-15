@@ -48,9 +48,7 @@ void solve(long long N, long long Q, std::vector<long long> a, std::vector<long 
         mp[a[i]].push_back(i+1);
 
     for(int i=0;i<Q;i++){
-        if(mp[x[i]].empty())
-            cout<<-1<<endl;
-        else if (mp[x[i]][k[i]-1]==0)
+        if(mp[x[i]].size()<k[i])
             cout<<-1<<endl;
         else
             cout<<mp[x[i]][k[i]-1]<<endl;
