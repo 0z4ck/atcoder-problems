@@ -61,12 +61,18 @@ void solve(long long N, std::string S){
             for(int j=0;j<10;j++)
                 for(int k=0;k<10;k++)
                     for(int si=0;si<N;si++)
-                        if(S[si]=='0'+i)
+                        if(S[si]=='0'+i){
                             for(int sj=si+1;sj<N;sj++)
-                                if(S[sj]=='0'+j)
+                                if(S[sj]=='0'+j){
                                     for(int sk=sj+1;sk<N;sk++)
-                                        if(S[sk]=='0'+k)
+                                        if(S[sk]=='0'+k){
                                             nums[i][j][k]=true;
+                                            break;
+                                        }
+                                    break;
+                                }
+                            break;
+                        }
         int cnt=0;
         for(int i=0;i<10;i++)
             for(int j=0;j<10;j++)
