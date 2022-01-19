@@ -60,11 +60,16 @@ void solve(long long N, std::vector<std::string> s){
     int ending_a = 0;
     int leading_b = 0;
     bool previous_a = false;
+    bool l_b = false;
+    int lbea = 0;
     for(int i=0;i<N;i++){
         previous_a = false;
+        l_b = false;
         for(int j=0;s[i][j];j++){
-            if(j==0&&s[i][j]=='B')
+            if(j==0&&s[i][j]=='B'){
                 leading_b++;
+                l_b = true;
+            }
             if(previous_a)
                 if (s[i][j]=='B')
                     cnt++;
@@ -72,10 +77,16 @@ void solve(long long N, std::vector<std::string> s){
                 previous_a = true;
             else
                 previous_a = false;
-            if (!s[i][j+1]&&s[i][j]=='A')
+            if (!s[i][j+1]&&s[i][j]=='A'){
                 ending_a++;
+                if(l_b)
+                    lbea++;
+            }
         }
     }
+    if (lbea==leading_b&&lbea==ending_a)
+        cout << cnt + lbea -1 <<endl;
+    else
     cout << cnt + min(leading_b,ending_a) <<endl;
 
 }
