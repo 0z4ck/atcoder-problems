@@ -84,7 +84,7 @@ void solve(long long N, std::vector<std::string> s){
             }
         }
     }
-    if (lbea==leading_b&&lbea==ending_a)
+    if ((lbea==leading_b)&&(lbea==ending_a))
         cout << cnt + lbea -1 <<endl;
     else
     cout << cnt + min(leading_b,ending_a) <<endl;
