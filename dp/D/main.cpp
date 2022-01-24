@@ -60,7 +60,7 @@ void solve(long long N, long long W, std::vector<long long> w, std::vector<long 
     for(int i=0;i<N;i++)
         for(int j=0;j<W;j++)
             if(j+1>=w[i])
-                dp[i+1][j]=max(dp[i][j+1-w[i]]+v[i],dp[i][j]);
+                dp[i+1][j]=max(dp[i][j+1-w[i]]+v[i],dp[i][j+1]);
     DBG(dp);
     cout<<dp[N][W-1]<<endl;
 }
