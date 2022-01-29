@@ -64,7 +64,7 @@ void solve(long long N, std::string s){
             minchari=i;
         }
     string ss = s;
-    sort(ss.begin(),ss.begin()+minchari);
+    sort(ss.begin(),ss.begin()+minchari+1);
     DBGln(ss);
 
 }
