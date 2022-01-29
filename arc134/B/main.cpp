@@ -67,14 +67,17 @@ void solve(long long N, std::string s){
     sort(ss.begin(),ss.begin()+minchari+1);
 
     int l=0,r=minchari;
-    int ssl=0;
     char swp;
+    vector<int> ssl(N,0);
     for(;l<r;){
-        if(ss[l+ssl]==s[l])
+        if(ss[l+ssl[l]]==s[l])
             l++;
-        else if(ss[l+ssl]==s[r]){
-            if(s[l]==ss[l+ssl+1])
-                ssl++;
+        else if(ss[l+ssl[l]]==s[r]){
+            for(int i=0;i<N;i++)
+            if(s[l]==ss[l+ssl[l]+1]){
+                ssl[i]++;
+                break;
+            }
             swp=s[l];s[l]=s[r];s[r]=swp;r--;l++;
         }
         else
