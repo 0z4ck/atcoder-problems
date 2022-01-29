@@ -59,7 +59,7 @@ void solve(long long N, std::string s){
     char minchar='z';
     int minchari;
     for(int i=0;s[i];i++)
-        if(minchar>s[i]){
+        if(minchar>=s[i]){
             minchar=s[i];
             minchari=i;
         }
