@@ -71,6 +71,10 @@ void solve(long long N, std::string s){
     for(;l<r;){
         if(ss[l]==s[l])
             l++;
+        else if(ss[l]==s[r]){
+            swp=s[l];s[l]=s[r];s[r]=swp;r--;l++;
+        }
+
         else if(s[l]>s[r]){
             swp=s[l];s[l]=s[r];s[r]=swp;r--;l++;
         }
