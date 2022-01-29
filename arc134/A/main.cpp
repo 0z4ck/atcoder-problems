@@ -79,11 +79,11 @@ void solve(long long N, long long L, long long W, std::vector<long long> a){
         }else
             point = a[i] + W;
     }
-        if (point<x) {
-            if (((x)-point)%W!=0)
-                cnt += ((x)-point)/W+1;
+        if (point<L) {
+            if (((L)-point)%W!=0)
+                cnt += ((L)-point)/W+1;
             else
-                cnt += ((x)-point)/W;
+                cnt += ((L)-point)/W;
         }
     cout<<cnt<<endl;
 }
