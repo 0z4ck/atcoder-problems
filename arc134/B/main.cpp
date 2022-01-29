@@ -67,7 +67,7 @@ void solve(long long N, std::string s){
     sort(ss.begin(),ss.begin()+minchari+1);
 
     int l=0,r=minchari;
-    int ssl=0
+    int ssl=0;
     char swp;
     for(;l<r;){
         if(ss[l+ssl]==s[l])
