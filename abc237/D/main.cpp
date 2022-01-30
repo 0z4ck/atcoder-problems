@@ -64,13 +64,17 @@ void solve(long long N, std::string S){
         fw[i]=i;
 
     int c=0;
+    int cc=0;
+    char lc;
     for(int i=1;i<N+1;i++){
         if(S[i-1]=='L'){
             nx[i]=c;
+            fw[i]=fw[c];
             c=i;
         }
         else{
             fw[i]=c;
+            nx[i]=nx[c];
             c=i;
         }
     }
