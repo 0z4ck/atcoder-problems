@@ -57,6 +57,23 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 const string YES = "Yes";
 const string NO = "No";
 
+struct node {
+    int data;
+    struct node* left;
+    struct node* right;
+};
+
+struct node* newNode(int data)
+{
+    struct node* node
+        = (struct node*)malloc(sizeof(struct node));
+
+    node->data = data;
+
+    node->left = NULL;
+    node->right = NULL;
+    return (node);
+}
 void solve(std::string S){
     int N = S.size();
     bool flag = true;
@@ -72,6 +89,10 @@ void solve(std::string S){
         if(S[N-i-1]!='a')
             break;
         t_a++;
+    }
+    if(h_a==N){
+        cout<<YES<<endl;
+        return;
     }
     if(h_a>t_a){
         cout<<NO<<endl;
