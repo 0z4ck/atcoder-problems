@@ -90,11 +90,11 @@ void solve(long long N, std::string S){
     struct node* rootb = root;
     for(int i=0;i<N;i++){
         if(S[i]=='L'){
-            root->left=newNode(i);
+            root->left=newNode(i+1);
             root = root->left;
         }
         else{
-            root->right=newNode(i);
+            root->right=newNode(i+1);
             root = root->left;
         }
     }
