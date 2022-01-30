@@ -68,10 +68,12 @@ void solve(long long N, std::string S){
         if(S[i]=='L'){
             nx[i]=nx[c];
             fw[c]=fw[i];
+            c=i;
         }
         else{
             nx[c]=nx[i];
             fw[i]=fw[c];
+            c=i;
         }
     }
     cerr<<nx<<endl;
