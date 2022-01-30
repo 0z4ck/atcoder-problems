@@ -69,7 +69,7 @@ void solve(std::string S){
         h_a++;
     }
     for(int i=0;i<N;i++){
-        if(S[N-i]!='a')
+        if(S[N-i-1]!='a')
             break;
         t_a++;
     }
