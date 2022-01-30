@@ -82,7 +82,7 @@ void solve(std::string S){
     DBG(h_a);
     int d = t_a-h_a;
     for(int i=0;i<N/2;i++){
-        if (S[i]!=S[N-i-d]){
+        if (S[i]!=S[N-i-1-d]){
             flag=false;
             break;
         }
