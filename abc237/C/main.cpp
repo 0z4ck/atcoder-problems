@@ -2,78 +2,8 @@
 #define DBGln(x) do { std::cerr << #x << ": " << x << std::endl; } while (0)
 #define DBG(x) do { std::cerr << #x << ": " << x ; } while (0)
 using namespace std;
-const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1};
-
-template<typename T>
-std::ostream& operator<<(std::ostream& s, const std::vector<T>& v){
-    s.put('[');
-    char comma[3] = {'\0', ' ', '\0'};
-    for (const auto& e : v) {
-        s << comma << e;
-        comma[0] = ',';
-    }
-    return s << ']';
-}
-template<typename T,typename T2>
-std::ostream& operator<<(std::ostream& s, const std::pair<T,T2>& p){
-    s.put('{');
-    s<<p.first<<": "<<p.second;
-    return s << '}';
-}
-template<typename T>
-std::ostream& operator<<(std::ostream& s, const std::vector<std::vector<T>>& v){
-    for(const auto& e : v){
-        s.put('[');
-        char comma[3] = {'\0', ' ', '\0'};
-        for (const auto& e2 : e) {
-            s << comma << e2;
-            comma[0] = ',';
-        }
-        s << ']'<<endl;
-    }
-    return s;
-}
-template<typename T,typename T2>
-std::ostream& operator<<(std::ostream& s, const std::map<T,T2>& mp){
-    s.put('{');
-    char comma[3] = {'\0', ' ', '\0'};
-    for (const auto& p : mp) {
-        s << comma << p.first << ": "<<p.second;
-        comma[0] = ',';
-    }
-    return s << '}';
-}
-template<typename T>
-std::ostream& operator<<(std::ostream& s, std::queue<T> q){
-    s<<"queue(";
-    char comma[3] = {'\0', ' ', '\0'};
-    while (!q.empty()){
-        s << comma <<q.front();
-        q.pop();
-        comma[0] = ',';
-    }
-    return s << ')';
-}
 const string YES = "Yes";
 const string NO = "No";
-
-struct node {
-    int data;
-    struct node* left;
-    struct node* right;
-};
-
-struct node* newNode(int data)
-{
-    struct node* node
-        = (struct node*)malloc(sizeof(struct node));
-
-    node->data = data;
-
-    node->left = NULL;
-    node->right = NULL;
-    return (node);
-}
 void solve(std::string S){
     int N = S.size();
     int h_a=0;
@@ -98,9 +28,8 @@ void solve(std::string S){
         return;
     }
 
-    int d = t_a-h_a;
     for(int i=h_a;i<N/2;i++){
-        if (S[i]!=S[N-i-1-d]){
+        if (S[i]!=S[N-i-1+h_a-t_a]){
             cout<<NO<<endl;
             return ;
         }
