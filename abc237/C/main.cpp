@@ -78,6 +78,8 @@ void solve(std::string S){
         return;
     }
 
+    DBG(t_a);
+    DBG(h_a);
     int d = t_a-h_a;
     for(int i=0;i<N/2;i++){
         if (S[i]!=S[N-i-d]){
