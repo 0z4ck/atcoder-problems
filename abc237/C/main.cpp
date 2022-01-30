@@ -28,7 +28,7 @@ void solve(std::string S){
         return;
     }
 
-    for(int i=0;i<N;i++){
+    for(int i=0;i<(N+h_a-t_a)/2;i++){
         if (S[i]!=S[N-i-1+h_a-t_a]){
             cout<<NO<<endl;
             return ;
