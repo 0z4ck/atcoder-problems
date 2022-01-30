@@ -58,7 +58,7 @@ const string YES = "Yes";
 const string NO = "No";
 
 void solve(long long N){
-    if((pow(2,31)<N)&&(pow(-2,31)<=N))
+    if((pow(2,31)>N)&&(pow(-2,31)<=N))
         cout<<YES<<endl;
     else
         cout<<NO<<endl;
