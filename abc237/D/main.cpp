@@ -95,7 +95,7 @@ void solve(long long N, std::string S){
         }
         else{
             root->right=newNode(i+1);
-            root = root->left;
+            root = root->right;
         }
     }
             
