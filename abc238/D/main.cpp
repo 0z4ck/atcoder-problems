@@ -71,6 +71,7 @@ int main(){
             cout<<"No"<<endl;
         else{
             for(int bit=0;bit<62;bit++){
+                x=x|(long long)(1<<bit);
                 if(x+y==s){
                     cout<<"Yes"<<endl;
                     break;
@@ -79,7 +80,6 @@ int main(){
                     cout<<"No"<<endl;
                     break;
                 }
-                x=x|(long long)(1<<bit);
             }
         }
     }
