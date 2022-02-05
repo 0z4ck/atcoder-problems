@@ -70,8 +70,9 @@ int main(){
         if(s<a*2)
             cout<<"No"<<endl;
         else{
-            for(int bit=0;bit<62;bit++){
+            for(int bit=0;bit<2;bit++){
                 x=x|(long long)(1<<bit);
+                DBGln(x);
                 if(x+y==s){
                     cout<<"Yes"<<endl;
                     break;
