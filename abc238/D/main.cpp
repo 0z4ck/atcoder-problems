@@ -66,7 +66,7 @@ int main(){
 
     for(int i=0;i<N;i++){
         cin >> a >> s;
-        if(s>=a)
+        if(s>=a*2)
             cout<<"Yes"<<endl;
         else
             cout<<"No"<<endl;
