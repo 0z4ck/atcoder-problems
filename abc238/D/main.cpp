@@ -70,7 +70,7 @@ int main(){
         if(s<a*2)
             cout<<"No"<<endl;
         else{
-            for(int bit=0;;bit++){
+            for(int bit=0;bit<62;bit++){
                 if(x+y==s){
                     cout<<"Yes"<<endl;
                     break;
