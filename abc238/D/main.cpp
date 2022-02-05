@@ -79,7 +79,7 @@ int main(){
                     cout<<"No"<<endl;
                     break;
                 }
-                x|=(1<<bit);
+                x=x|(long long)(1<<bit);
             }
         }
     }
