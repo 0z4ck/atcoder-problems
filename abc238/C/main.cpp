@@ -57,7 +57,7 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 const long long MOD = 998244353;
 
 void solve(long long N){
-    long long su = 0;
+    unsigned long long su = 0;
     int digi = log10(N);
     //cout << digi << endl;
     for (int i=0; i<digi; i++) {
