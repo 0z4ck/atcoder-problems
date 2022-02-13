@@ -57,17 +57,21 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 const long long MOD = 998244353;
 
 void solve(long long X){
-    queue<long long> q;
-    q.push(X);
+    queue<pair<long long, int>> q;
+    q.push(make_pair(X,1));
     vector<int> ans;
     long long an=1;
     while(!q.empty()){
-        auto n = q.front();q.pop();
+        auto n = q.front().first;
+        auto m = q.front().second;
+        q.pop();
         if(n<5)
-            ans.push_back(n);
-        else{
-            q.push(n/2);
-            q.push(n/2+n%2);
+            ans.push_back(pow(n,m));
+        else if (n%2){
+            q.push(make_pair(n/2,m));
+            q.push(make_pair(n/2+n%2,m));
+        }else{
+            q.push(make_pair(n/2,m*2));
         }
     }
     for(auto &a: ans){
