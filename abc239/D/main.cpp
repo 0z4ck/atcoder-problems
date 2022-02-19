@@ -76,7 +76,7 @@ void solve(long long A, long long B, long long C, long long D){
     for(int i=A;i<=B;i++)
         for(int j=C;j<=D;j++)
             if(IsPrime(i+j)){
-                p[i]=true;
+                p[i-A]=true;
             }
     for(int i=0;i<B+1-A;i++){
         if(!p[i]){
