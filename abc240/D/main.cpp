@@ -59,21 +59,27 @@ void solve(long long N, std::vector<long long> a){
     int cnt=0;
     int lastball=0;
     int lastcnt=0;
+    int lastballfirstindex=0;
     vector<int> v;
+    vector<int> lack(0,a[0]-1);
     for(int i=0;i<N;i++){
         cnt++;
         v.push_back(a[i]);
+        if(lastball==a[i]){
+            lack[lastballfirstindex]--;
+        }else{
+            lack.push_back(a[i]-1);
+            lastballfirstindex++;
+        }
         lastball=a[i];
         //cerr<<v<<endl;
-        lastcnt=0;
-        for(int j=cnt-1;lastball==v[j];j--){
-            lastcnt++;
-        }
-        if(lastcnt>=lastball){
+        if(lack[lastballfirstindex]==0){
             for(int j=0;j<lastball;j++)
                 v.pop_back();
             lastcnt-=lastball;
             cnt-=lastball;
+            lastballfirstindex--;
+            lack.pop_back();
         }
 
         cout << cnt <<endl;
