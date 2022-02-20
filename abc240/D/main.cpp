@@ -59,6 +59,7 @@ void solve(long long N, std::vector<long long> a){
     int cnt=1;
     int lastball=a[0];
     int lastcnt=1;
+    cout<<1<<endl;
     for(int i=1;i<N;i++){
         cnt++;
         if(lastball==a[i])
