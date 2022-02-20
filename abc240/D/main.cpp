@@ -56,11 +56,10 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 }
 
 void solve(long long N, std::vector<long long> a){
-    int cnt=1;
-    int lastball=a[0];
-    int lastcnt=1;
-    cout<<1<<endl;
-    for(int i=1;i<N;i++){
+    int cnt=0;
+    int lastball=0;
+    int lastcnt=0;
+    for(int i=0;i<N;i++){
         cnt++;
         if(lastball==a[i])
             lastcnt++;
