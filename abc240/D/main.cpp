@@ -65,6 +65,7 @@ void solve(long long N, std::vector<long long> a){
         v.push_back(a[i]);
         lastball=a[i];
         cerr<<v<<endl;
+        lastcnt=0;
         for(int j=cnt-1;lastball==v[j];j--){
             lastcnt++;
         }
