@@ -64,6 +64,12 @@ void solve(long long N, long long X, std::vector<long long> a, std::vector<long 
         for(int j=0;j<N;j++){
             if(i>a[j]&&dp[i-a[j]])
                 dp[i]=true;
+            else{
+                DBG(i);
+                DBG(j);
+                DBG(a[j]);
+                DBGln(dp[i-a[j]]);
+            }
             if(i>b[j]&&dp[i-b[j]])
                 dp[i]=true;
         }
