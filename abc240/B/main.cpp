@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 }
 
 void solve(long long N, std::vector<long long> a){
-    bool mp[100000];
+    vector<bool> mp(1000000000);
     int count=0;
     for(int i=0;i<N;i++){
         if(!mp[a[i]])
