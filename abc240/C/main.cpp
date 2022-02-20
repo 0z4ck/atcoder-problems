@@ -62,10 +62,10 @@ void solve(long long N, long long X, std::vector<long long> a, std::vector<long 
     dp[0]=true;
     for(int i=0;i<X+1;i++){
         for(int j=1;j<N;j++){
-            if(j>a[i])
-                dp[j]=dp[j-a[i]];
-            if(j>b[i])
-                dp[j]=dp[j-b[i]]||dp[j];
+            if(i>a[j])
+                dp[i]=dp[i-a[j]];
+            if(i>b[j])
+                dp[i]=dp[i-b[j]]||dp[i];
         }
     }
     for(int i=0;i<X+1;i++)
