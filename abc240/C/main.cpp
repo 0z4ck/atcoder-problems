@@ -63,9 +63,9 @@ void solve(long long N, long long X, std::vector<long long> a, std::vector<long 
     for(int i=0;i<X+1;i++){
         for(int j=1;j<N;j++){
             if(j>a[i])
-                dp[j]|=dp[j-a[i]];
+                dp[j]=dp[j-a[i]]||dp[j];
             if(j>b[i])
-                dp[j]|=dp[j-b[i]];
+                dp[j]=dp[j-b[i]]||dp[j];
         }
     }
     cout<< (dp[X]?YES:NO)<<endl;
