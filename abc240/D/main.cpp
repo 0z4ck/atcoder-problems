@@ -67,7 +67,7 @@ void solve(long long N, std::vector<long long> a){
         }else
             cylinder.push(vector<int>{a[i],1});
         if(cylinder.top()[0]==cylinder.top()[1]){
-            dup-=cylinder.top()[0];
+            dup-=cylinder.top()[0]-1;
             cylinder.pop();
         }
         cout << cylinder.size()+dup << endl;
