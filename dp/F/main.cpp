@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #define DBGln(x) do { std::cerr << #x << ": " << x << std::endl; } while (0)
-#define DBG(x) do { std::cerr << #x << ": " << x ; } while (0)
+#define DBG(x) do { std::cerr << #x << ": " << x << " "; } while (0)
 using namespace std;
 const int dx[4] = {1,0,-1,0}, dy[4] = {0,1,0,-1};
 
@@ -63,8 +63,10 @@ void solve(std::string s, std::string t){
     for(int i=0;i<s.size();i++)
         for(int j=0;j<t.size();j++){
             dp[i+1][j+1] = max(dp[i][j+1], dp[i+1][j]);
-            if (s[i]==t[i])
+            if (s[i]==t[i]){
+                DBG(s[i]);DBG(t[i]);DBG(dp[i][j]+1);DBGln(dp[i+1][j+1]);
                 dp[i+1][j+1] = max(dp[i+1][j+1], dp[i][j]+1);
+            }
         }
     cerr<<dp<<endl;
     cout << dp[s.size()][t.size()]<<endl;
