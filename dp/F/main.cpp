@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 }
 
 void solve(std::string s, std::string t){
-    int dp[3010][3010];
+    vector<vector<int>> dp(s.size()+1, vector<int>(t.size()+1, 0));
     dp[0][0]=0;
     dp[0][1]=0;
     dp[1][0]=0;
