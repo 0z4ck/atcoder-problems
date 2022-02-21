@@ -63,7 +63,7 @@ void solve(std::string s, std::string t){
     for(int i=0;i<s.size();i++)
         for(int j=0;j<t.size();j++){
             dp[i+1][j+1] = max(dp[i][j+1], dp[i+1][j]);
-            if (s[i]==t[i]){
+            if (s[i]==t[j]){
                 DBG(s[i]);DBG(t[i]);DBG(dp[i][j]+1);DBGln(dp[i+1][j+1]);
                 dp[i+1][j+1] = max(dp[i+1][j+1], dp[i][j]+1);
             }
