@@ -66,12 +66,12 @@ void solve(std::string s, std::string t){
         }
     int ss=s.size();int ts=t.size();
     string ans;
-    while(ss&&ts){
+    while(ss>0&&ts>0){
         ss--;ts--;
         if(dp[ss][ts]==dp[ss][ts-1])
-            ts--;
+            ss+;
         else if(dp[ss][ts]==dp[ss-1][ts])
-            ss--;
+            ts+;
         else
             ans += s[ss];
     }
