@@ -67,13 +67,14 @@ void solve(std::string s, std::string t){
     int ss=s.size();int ts=t.size();
     string ans;
     while(ss>0&&ts>0){
-        ss--;ts--;
         if(dp[ss][ts]==dp[ss][ts-1])
-            ss++;
+            ts--;
         else if(dp[ss][ts]==dp[ss-1][ts])
-            ts++;
-        else
-            ans += s[ss];
+            ss--;
+        else{
+            ans += s[ss-1];
+            ts--;ss--;
+        }
     }
     cout << ans <<endl;
 }
