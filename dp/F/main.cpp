@@ -69,9 +69,9 @@ void solve(std::string s, std::string t){
     while(ss>0&&ts>0){
         ss--;ts--;
         if(dp[ss][ts]==dp[ss][ts-1])
-            ss+;
+            ss++;
         else if(dp[ss][ts]==dp[ss-1][ts])
-            ts+;
+            ts++;
         else
             ans += s[ss];
     }
