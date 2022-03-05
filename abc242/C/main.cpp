@@ -74,7 +74,7 @@ void solve(long long N){
             if(min(9,i-1)>j+1)
                 dp[i-1][j] += dp[i-2][j+1];
         }
-        cerr<<dp<<endl;
+        //cerr<<dp<<endl;
 
         rep(j,i-1)
             s+=dp[i-2][j];
