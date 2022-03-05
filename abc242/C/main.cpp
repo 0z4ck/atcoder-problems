@@ -68,17 +68,17 @@ void solve(long long N){
         s=0;
         dp[i-1][min(9,i-1)]=1;
         for(int j=0;j<min(9,i-1);j++){
-            dp[i-1][j] += dp[i-2][j];
+            dp[i-1][j] += dp[i-2][j]%MOD;
             if(j>0)
-                dp[i-1][j] += dp[i-2][j-1];
+                dp[i-1][j] += dp[i-2][j-1]%MOD;
             if(min(9,i-1)>j+1)
-                dp[i-1][j] += dp[i-2][j+1];
+                dp[i-1][j] += dp[i-2][j+1]%MOD;
         }
         //cerr<<dp<<endl;
 
         rep(j,i-1)
-            s+=dp[i-2][j];
-        a[i]=a[i-1]*3-2*s;
+            s+=dp[i-2][j]%MOD;
+        a[i]=((a[i-1]*3)%MOD)-2*s;
     }
     cout<<a[N]<<endl;
 }
