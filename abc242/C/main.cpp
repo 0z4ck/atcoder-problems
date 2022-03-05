@@ -65,12 +65,12 @@ void solve(long long N){
     vector<vector<long long>> dp(N,vector<long long>(9,0));
     a[0]=1;a[1]=9;dp[0][0]=1;long long s;
     for(int i=2;i<N+1;i++){
-        dp[i-1][max(9,i-1)]=1;
-        for(int j=0;j<max(9,i-1);j++){
+        dp[i-1][min(9,i-1)]=1;
+        for(int j=0;j<min(9,i-1);j++){
             dp[i-1][j] += dp[i-2][j];
             if(j>-1)
                 dp[i-1][j] += dp[i-2][j-1];
-            if(max(9,i-1)>j+1)
+            if(min(9,i-1)>j+1)
                 dp[i-1][j] += dp[i-2][j+1];
         }
 
