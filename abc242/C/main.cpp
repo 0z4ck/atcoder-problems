@@ -65,17 +65,19 @@ void solve(long long N){
     vector<vector<long long>> dp(N,vector<long long>(9,0));
     a[0]=1;a[1]=9;dp[0][0]=1;long long s;
     for(int i=2;i<N+1;i++){
+        s=0;
         dp[i-1][min(9,i-1)]=1;
         for(int j=0;j<min(9,i-1);j++){
             dp[i-1][j] += dp[i-2][j];
             if(j>0)
                 dp[i-1][j] += dp[i-2][j-1];
-            cerr<<dp;
             if(min(9,i-1)>j+1)
                 dp[i-1][j] += dp[i-2][j+1];
         }
 
-        a[i]=a[i-1]*3-2*(i-1);
+        rep(j,i)
+            s+=dp[i][j];
+        a[i]=a[i-1]*3-2*s;
     }
     cout<<a[N]<<endl;
 }
