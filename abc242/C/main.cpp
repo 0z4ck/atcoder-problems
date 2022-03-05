@@ -74,7 +74,7 @@ void solve(long long N){
                 dp[i][j] += dp[i-1][j+1]%MOD;
         }
 
-    long long s;
+    long long s=0;
     for(int j=1;j<10;j++)
         s += dp[N-1][j]%MOD;
     cout<<s<<endl;
