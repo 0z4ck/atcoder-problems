@@ -68,11 +68,11 @@ void solve(long long N){
         dp[i-1][min(9,i-1)]=1;
         for(int j=0;j<min(9,i-1);j++){
             dp[i-1][j] += dp[i-2][j];
+            cerr<<dp;
             if(j>-1)
                 dp[i-1][j] += dp[i-2][j-1];
             if(min(9,i-1)>j+1)
                 dp[i-1][j] += dp[i-2][j+1];
-            cerr<<dp;
         }
 
         a[i]=a[i-1]*3-2*(i-1);
