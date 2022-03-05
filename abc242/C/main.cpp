@@ -76,8 +76,8 @@ void solve(long long N){
         }
         cerr<<dp<<endl;
 
-        rep(j,i)
-            s+=dp[i-1][j];
+        rep(j,i-1)
+            s+=dp[i-2][j];
         a[i]=a[i-1]*3-2*s;
     }
     cout<<a[N]<<endl;
