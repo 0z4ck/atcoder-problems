@@ -61,14 +61,13 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 const long long MOD = 998244353;
 
 void solve(long long N){
-    vector<int> a(N);
     vector<vector<long long>> dp(N,vector<long long>(9,0));
     for(int j=1;j<10;j++)
         dp[0][j]=1;
     for(int i=1;i<N;i++)
         for(int j=1;j<10;j++){
             dp[i][j] += dp[i-1][j]%MOD;
-            if(j!=0)
+            if(j!=1)
                 dp[i][j] += dp[i-1][j-1]%MOD;
             if(j!=9)
                 dp[i][j] += dp[i-1][j+1]%MOD;
