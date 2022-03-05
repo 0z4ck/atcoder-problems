@@ -66,11 +66,11 @@ void solve(long long N){
         dp[0][j]=1;
     for(int i=1;i<N;i++)
         for(int j=1;j<10;j++){
-            dp[i][j] += dp[i-1][j];
+            dp[i][j] += dp[i-1][j]%MOD;
             if(j!=1)
-                dp[i][j] += dp[i-1][j-1];
+                dp[i][j] += dp[i-1][j-1]%MOD;
             if(j!=9)
-                dp[i][j] += dp[i-1][j+1];
+                dp[i][j] += dp[i-1][j+1]%MOD;
         }
 
     long long s=0;
