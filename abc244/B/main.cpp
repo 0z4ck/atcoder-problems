@@ -88,8 +88,8 @@ void solve(long long N, std::string T){
             d=d%4;
         }else{
             x+=dx[d];
-            y=dy[d];
-            cerr<<x<<" "<<y<<endl;
+            y+=dy[d];
+            //cerr<<x<<" "<<y<<endl;
         }
     }
     cout<<x<<" "<<y<<endl;
