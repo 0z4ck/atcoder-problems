@@ -89,6 +89,7 @@ void solve(long long N, std::string T){
         }else{
             x+=dx[d];
             y=dy[d];
+            cerr<<x<<" "<<y<<endl;
         }
     }
     cout<<x<<" "<<y<<endl;
