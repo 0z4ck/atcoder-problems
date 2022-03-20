@@ -80,6 +80,7 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
     return s << ')';
 }
 const string YES = "Yes";
+const string NO = "No";
 
 void solve(std::vector<std::string> S, std::vector<std::string> T){
     int sc=0;
