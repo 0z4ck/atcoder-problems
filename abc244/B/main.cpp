@@ -83,7 +83,7 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 void solve(long long N, std::string T){
     int d=0,x=0,y=0;
     rep(i,N){
-        if(T[i]=='S'){
+        if(T[i]=='R'){
             d+=3;
             d=d%4;
         }else{
