@@ -67,12 +67,12 @@ void dfs(long long node, vector<vector<long long>> &G, vector<long long> &ts, ve
 void solve(long long N, long long M, std::vector<long long> x, std::vector<long long> y){
     vector<vector<long long>> G(N);
     for(int i=0;i<M;i++){
-        G[x[i]i-1].push_back(y[i]-1);
+        G[x[i]-1].push_back(y[i]-1);
     }
     vector<bool> visited(N,false);
     vector<long long> ts;
     for(int i=0;i<N;i++){
-        dfs(i,G,ts);
+        dfs(i,G,ts,visited);
     }
     reverse(ts.begin(),ts.end());
     cout<<ts<<endl;
