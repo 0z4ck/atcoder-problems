@@ -56,13 +56,12 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 }
 
 void dfs(long long node, vector<vector<long long>> &G, vector<long long> &ts, vector<bool> &visited){
-    for(auto nxt: G[node]){
-        if(!visited[nxt]){
-            dfs(nxt, G, ts, visited);
-            visited[nxt]=true;
-        }
+    for(auto nxt: G[node])
+        dfs(nxt, G, ts, visited);
+    if(!visited[node]){
+        visited[node]=true;
+        ts.push_back(node);
     }
-    ts.push_back(node);
 }
 void solve(long long N, long long M, std::vector<long long> x, std::vector<long long> y){
     vector<vector<long long>> G(N);
