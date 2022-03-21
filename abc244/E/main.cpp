@@ -91,7 +91,7 @@ void solve(long long N, long long M, long long K, long long S, long long T, long
     }
 
     for(auto &a : G[S-1])
-        if(a==X)
+        if(a==X-1)
             dp[1][a][1]=1;
         else
             dp[1][a][0]=1;
@@ -99,7 +99,7 @@ void solve(long long N, long long M, long long K, long long S, long long T, long
     rep(i,K-1)
         rep(j,N)
             for(auto &a: G[j])
-                if(j==X){
+                if(j==X-1){
                     dp[i+2][j][0] = (dp[i+2][j][0]+dp[i+1][a][1])%MOD;
                     dp[i+2][j][1] = (dp[i+2][j][1]+dp[i+1][a][0])%MOD;
                 }else{
