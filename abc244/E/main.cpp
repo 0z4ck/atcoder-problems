@@ -96,15 +96,15 @@ void solve(long long N, long long M, long long K, long long S, long long T, long
         else
             dp[1][a][0]=1;
     
-    rep(i,K)
+    rep(i,K-1)
         rep(j,N)
             for(auto &a: G[j])
                 if(j==X){
-                    dp[i+2][j][0] += dp[i][a][1]%MOD;
-                    dp[i+2][j][1] += dp[i][a][0]%MOD;
+                    dp[i+2][j][0] += dp[i+1][a][1]%MOD;
+                    dp[i+2][j][1] += dp[i+1][a][0]%MOD;
                 }else{
-                    dp[i+2][j][0] += dp[i][a][0]%MOD;
-                    dp[i+2][j][1] += dp[i][a][1]%MOD;
+                    dp[i+2][j][0] += dp[i+1][a][0]%MOD;
+                    dp[i+2][j][1] += dp[i+1][a][1]%MOD;
                 }
     cout<< dp[K][T-1][0] <<endl;
 
