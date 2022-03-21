@@ -78,7 +78,7 @@ void solve(long long N, long long M, std::vector<long long> x, std::vector<long 
     vector<int> dp(N,0);
     for(auto &node : ts)
         for(auto &nxt : G[node])
-            dp[node] = max(dp[node],dp[nxt]+1);
+            dp[nxt] = max(dp[node]+1,dp[nxt]);
     for(int i=0;i<N;i++)
         ans=max(ans,dp[i]);
     cout<<ans<<endl;
