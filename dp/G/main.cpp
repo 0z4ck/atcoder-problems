@@ -60,9 +60,9 @@ void dfs(long long node, vector<vector<long long>> &G, vector<long long> &ts, ve
         if(!visited[nxt]){
             dfs(nxt, G, ts, visited);
             visited[nxt]=true;
-            ts.push_back(nxt);
         }
     }
+    ts.push_back(node);
 }
 void solve(long long N, long long M, std::vector<long long> x, std::vector<long long> y){
     vector<vector<long long>> G(N);
