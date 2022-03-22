@@ -71,6 +71,8 @@ void solve(long long N, long long M, std::vector<long long> x, std::vector<long 
     vector<bool> visited(N,false);
     vector<long long> ts;
     for(int i=0;i<N;i++){
+        if (visited[i])
+            continue;
         dfs(i,G,ts,visited);
     }
     reverse(ts.begin(),ts.end());
