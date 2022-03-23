@@ -81,7 +81,7 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 }
 
 void solve(long long N, long long W, long long C, std::vector<long long> w, std::vector<long long> v, std::vector<long long> c){
-    vector<vector<vector<long long>>> dp(N+1, vector<vector<long long>>(C+1, vector<long long>(W+1, 0)));
+    vector<vector<vector<long long>>> dp(N+1, vector<vector<long long>>(50, vector<long long>(W+1, 0)));
     for(int i=0;i<N;i++)
         for(int weight=0;weight<W+1;weight++)
             if(weight-w[i]>=0)
