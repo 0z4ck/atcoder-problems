@@ -65,7 +65,7 @@ void solve(long long N, long long W, std::vector<long long> w, std::vector<long 
     cerr<<dp;
     int ans=0;
     for(;ans<1000*N+1;ans++)
-        if (dp[ans]>W)
+        if (dp[ans]!=1<<30&&dp[ans]>W)
             break;
     cout<<ans-1<<endl;
 
