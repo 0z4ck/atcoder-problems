@@ -59,9 +59,9 @@ void solve(long long N, long long W, std::vector<long long> w, std::vector<long 
     vector<long long> dp(1000*N+1,1<<30);
     dp[0] = 0;
     for(int i=0;i<N;i++)
-        for(int val=1;val<1000*N+1;val++)
+        for(int val=1000*N+1;val>0;val--)
             if (val-v[i]>=0)
-                dp[val] = min(dp[val-v[i]]+w[i],dp[val]);
+                dp[val] = min(dp[val-v[i]]+w[i],min(dp[val],dp[val+1]));
     cerr<<dp;
     int ans=0;
     for(;ans<1000*N+1;ans++)
