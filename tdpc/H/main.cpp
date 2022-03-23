@@ -84,8 +84,10 @@ void solve(long long N, long long W, long long C, std::vector<long long> w, std:
     vector<vector<vector<long long>>> dp(N+1, vector<vector<long long>>(50, vector<long long>(W+1, 0)));
     for(int i=0;i<N;i++)
         for(int weight=0;weight<W+1;weight++)
-            if(weight-w[i]>=0)
+            if(weight-w[i]>=0){
+                DBG(i);DBG(c[i]-1);DBG(weight);DBGln(w[i]);
                 dp[i][c[i]-1][weight] = max(dp[i][c[i]-1][weight],dp[i-1][c[i]-1][weight-w[i]]+v[i]);
+            }
     cerr<<dp[N]<<endl;
 
 }
