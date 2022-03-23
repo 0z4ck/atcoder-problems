@@ -61,6 +61,8 @@ void solve(long long H, long long W, std::vector<std::vector<char>> a){
     dp[0][0]=1;
     for(int i=0;i<H;i++)
         for(int j=0;j<W;j++){
+            if(a[i][j]=='#')
+                continue;
             if(i)
                 dp[i][j]+=dp[i-1][j];
             if(j)
