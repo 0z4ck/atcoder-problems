@@ -56,7 +56,7 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 }
 
 void solve(long long N, long long W, std::vector<long long> w, std::vector<long long> v){
-    vector<long long> dp(100001,1<<30);
+    vector<long long> dp(100002,1<<30);
     dp[0] = 0;
     for(int i=0;i<N;i++)
         for(int val=100000;val>0;val--)
