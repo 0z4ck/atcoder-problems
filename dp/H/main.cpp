@@ -64,9 +64,9 @@ void solve(long long H, long long W, std::vector<std::vector<char>> a){
             if(a[i][j]=='#')
                 continue;
             if(i)
-                dp[i][j]+=dp[i-1][j];
+                dp[i][j]=(dp[i][j]+dp[i-1][j])%MOD;
             if(j)
-                dp[i][j]+=dp[i][j-1];
+                dp[i][j]=(dp[i][j]+dp[i][j-1])%MOD;
         }
     cout<<dp[H-1][W-1]<<endl;
 }
