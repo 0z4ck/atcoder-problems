@@ -59,7 +59,7 @@ const long long MOD = 1000000007;
 void solve(long long H, long long W, std::vector<std::vector<std::string>> a){
     for(int i=0;i<H;i++){
         for(int j=0;j<W;j++)
-            cout<<a[i][j];
+            cout<<a[i][0][j];
         cout<<endl;
     }
 }
