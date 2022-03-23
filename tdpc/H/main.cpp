@@ -85,7 +85,7 @@ void solve(long long N, long long W, long long C, std::vector<long long> w, std:
     for(int i=0;i<N;i++)
         for(int weight=0;weight<W+1;weight++)
             if(weight-w[i]>=0)
-                dp[i][c[i]][weight] = max(dp[i][c[i]][weight],dp[i-1][c[i]][weight-w[i]]+v[i]);
+                dp[i][c[i]-1][weight] = max(dp[i][c[i]-1][weight],dp[i-1][c[i]-1][weight-w[i]]+v[i]);
     cerr<<dp[N]<<endl;
 
 }
