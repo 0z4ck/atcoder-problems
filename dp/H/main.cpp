@@ -56,10 +56,10 @@ std::ostream& operator<<(std::ostream& s, std::queue<T> q){
 }
 const long long MOD = 1000000007;
 
-void solve(long long H, long long W, std::vector<std::vector<std::string>> a){
+void solve(long long H, long long W, std::vector<std::vector<char>> a){
     for(int i=0;i<H;i++){
         for(int j=0;j<W;j++)
-            cout<<a[i][0][j];
+            cout<<a[i][j];
         cout<<endl;
     }
 }
@@ -69,9 +69,9 @@ int main(){
     std::scanf("%lld", &H);
     long long W;
     std::scanf("%lld", &W);
-    std::vector<std::vector<std::string>> a(H, std::vector<std::string>(1));
+    std::vector<std::vector<char>> a(H, std::vector<char>(W));
     for(int i = 0 ; i < H ; i++){
-        for(int j = 0 ; j < 1 ; j++){
+        for(int j = 0 ; j < W ; j++){
             std::cin >> a[i][j];
         }
     }
