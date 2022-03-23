@@ -62,6 +62,9 @@ void solve(long long N, long long W, std::vector<long long> w, std::vector<long 
         for(int val=100000;val>0;val--)
             if (val-v[i]>=0)
                 dp[val] = min(dp[val-v[i]]+w[i],min(dp[val],dp[val+1]));
+            else
+                dp[val] = min(dp[val],dp[val+1]);
+
     cerr<<(vector<long long>(dp.begin(), dp.begin()+100));
     int ans = 100000;
     while(dp[ans]>W)ans--;
