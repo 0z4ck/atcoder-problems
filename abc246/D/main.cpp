@@ -85,12 +85,11 @@ void solve(long long N){
     cerr<<at<<endl;
     for(long long a=0;a<ceil(pow(N,1.0/3.0))+1;a++){
         //for(long long b=max((long long)0,(long long)ceil(pow(N,1.0/3.0))-a);b<ceil(pow(N,1.0/3.0))+1;b++){
-        for(long long b=ceil(pow(N,1.0/3.0))-a;b<ceil(pow(N,1.0/3.0))+1;b++){
-            if (at>=N){
-                at=min(at,(a+b)*(a*a+b*b));
-                break;
-            }
+        long long b;
+        for(b=ceil(pow(N,1.0/3.0))-a;N<(a+b)*(a*a+b*b);b++){
+            
         }
+        at = min(at,(a+b)*(a*a+b*b));
     }
     cout <<at<<endl;
 }
