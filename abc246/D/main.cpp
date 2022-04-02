@@ -83,7 +83,7 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 void solve(long long N){
     long long at=(long long)1<<62;
     cerr<<at<<endl;
-    for(long long a=0;a<ceil(pow(N,1.0/3.0))+1;a++){
+    for(long long a=0;a<ceil(pow(N,1.0/3.0));a++){
         //for(long long b=max((long long)0,(long long)ceil(pow(N,1.0/3.0))-a);b<ceil(pow(N,1.0/3.0))+1;b++){
         for(long long b=ceil(pow(N,1.0/3.0))-a;b<ceil(pow(N,1.0/3.0))+1;b++){
             if (at>=N){
