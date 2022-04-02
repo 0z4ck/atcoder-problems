@@ -88,7 +88,7 @@ void solve(long long N){
             if (at>=N)
                 at=min(at,(a+b)*(a*a+b*b));
             else
-                continue;
+                break;
         }
     }
     cout <<at<<endl;
