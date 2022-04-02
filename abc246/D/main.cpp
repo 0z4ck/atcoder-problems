@@ -87,6 +87,8 @@ void solve(long long N){
         for(long long b=ceil(pow(N,1.0/3.0))-a;b<ceil(pow(N,1.0/3.0))+1;b++){
             if (at>=N)
                 at=min(at,(a+b)*(a*a+b*b));
+            else
+                continue;
         }
     }
     cout <<at<<endl;
