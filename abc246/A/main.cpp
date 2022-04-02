@@ -86,7 +86,7 @@ void solve(std::vector<long long> x, std::vector<long long> y){
 
     rep(i,3){
         mpx[x[i]]++;
-        mpx[y[i]]++;
+        mpy[y[i]]++;
     }
     for(auto a: mpx){
         if (a.second==1)
