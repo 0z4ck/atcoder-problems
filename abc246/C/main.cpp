@@ -81,8 +81,8 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 }
 
 void solve(long long N, long long K, long long X, std::vector<long long> A){
-    vector<int> mod(N), div(N);
-    int maisu=0, goukei=0;
+    vector<long long> mod(N), div(N);
+    long long maisu=0, goukei=0;
     rep(i,N){
         div[i] = A[i]/X;
         mod[i] = A[i]%X;
