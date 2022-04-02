@@ -90,7 +90,7 @@ void solve(long long N){
         for(b=ceil(pow(N,1.0/3.0))-a;N<(a+b)*(a*a+b*b);b++){
             c++;
         }
-        if(at>=N)
+        if((a+b)*(a*a+b*b)>=N)
             at = min(at,(a+b)*(a*a+b*b));
     }
     cout<<c<<endl;
