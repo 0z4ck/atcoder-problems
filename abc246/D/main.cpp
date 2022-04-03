@@ -84,16 +84,12 @@ void solve(long long N){
     long long at=(long long)1<<62;
     long long c=0;
     cerr<<at<<endl;
-    vector<bool> seen(1000009);
     for(long long a=0;a<ceil(pow(N,1.0/3.0))+1;a++){
         //for(long long b=max((long long)0,(long long)ceil(pow(N,1.0/3.0))-a);b<ceil(pow(N,1.0/3.0))+1;b++){
         long long r = ceil(pow(N,1.0/3.0));
         long long l = ceil(pow(N,1.0/3.0))-a;
         long long b = (r+l)/2;
         for(;;){
-            if (seen[b])
-                break;
-            seen[b]=true;
             b = (r+l)/2;
             if((a+b)*(a*a+b*b)>N){
                 at = min(at,(a+b)*(a*a+b*b));
@@ -104,6 +100,8 @@ void solve(long long N){
             }else{
                 l = b;
             }
+            if (abs(r-l)<2)
+                break;
         }
         /*if((a+b)*(a*a+b*b)>=N)
             at = min(at,(a+b)*(a*a+b*b));*/
