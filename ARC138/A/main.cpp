@@ -93,7 +93,7 @@ void solve(long long N, long long K, std::vector<long long> A){
     sort(all(R));
     sort(all(Rv));
     DBG(R);
-    long long ans = 1<<31;
+    long long ans = 1<<30;
     for(int i=K-1;i>=0;i--){
         auto upper = upper_bound(Rv.begin(), Rv.end(), A[i]);
         if (upper==Rv.end()){
