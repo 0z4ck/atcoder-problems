@@ -100,7 +100,7 @@ void solve(long long N, long long K, std::vector<long long> A){
             DBG("NO for ");cerr<<A[i]<<endl;
             continue;
         }
-        //cout<< distance(R.begin(),upper)+1 <<endl;
+        cout<< distance(Rv.begin(),upper)+1 <<endl;
     }
     cout<< ans<<endl;
 }
