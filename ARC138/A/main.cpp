@@ -86,11 +86,10 @@ void solve(long long N, long long K, std::vector<long long> A){
     vector<vector<long long>> R(N-K,vector<long long>(2));
     cout<<-1<<endl;
     for(int i=K;i<N;i++){
-        cout<<i;
         R[i-K][1]=i-K;
         R[i-K][0]=A[i];
     }
-    cout<<-1<<endl;
+    sort(all(R));
     DBG(R);
     //cout<< -1<<endl;
 }
