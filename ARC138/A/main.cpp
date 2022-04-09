@@ -88,6 +88,7 @@ void solve(long long N, long long K, std::vector<long long> A){
         R[i][1]=i-K;
         R[i][0]=A[i];
     }
+    cout<<-1<<endl;
     DBG(R);
     //cout<< -1<<endl;
 }
