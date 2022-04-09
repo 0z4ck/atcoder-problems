@@ -84,17 +84,19 @@ void solve(long long N, long long K, std::vector<long long> A){
     // {3,2,1,3}
     // {3,2,1,3,2,2,4}
     vector<pair<long long,long long>> R(N-K);
+    vector<long long> Rv(N-K);
     for(int i=K;i<N;i++){
+        Rv[i-K] = A[i];
         R[i-K].second=i-K;
         R[i-K].first=A[i];
     }
     sort(all(R));
+    sort(all(Rv));
     DBG(R);
     long long ans = 1<<31;
     for(int i=K-1;i>=0;i--){
-        //auto upper = upper_bound(R.begin(), R.end(), make_pair(A[i],1<<30));
-        auto upper =R.begin();
-        if (upper==R.end()){
+        auto upper = upper_bound(Rv.begin(), Rv.end(), A[i]);
+        if (upper==Rv.end()){
             DBG("NO for ");cerr<<A[i]<<endl;
             return;
         }
