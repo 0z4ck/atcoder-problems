@@ -85,8 +85,8 @@ void solve(long long N, long long K, std::vector<long long> A){
     // {3,2,1,3,2,2,4}
     vector<pair<long long,long long>> R(N-K);
     for(int i=K;i<N;i++){
-        R[i-K].first=i-K;
-        R[i-K].second=A[i];
+        R[i-K].second=i-K;
+        R[i-K].first=A[i];
     }
     sort(all(R));
     DBG(R);
