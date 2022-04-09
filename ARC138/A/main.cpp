@@ -100,6 +100,8 @@ void solve(long long N, long long K, std::vector<long long> A){
             cerr<<A[i]<<endl;
             continue;
         }
+        DBG(R[distance(Rv.begin(),upper)+1]);
+        DBGln(K-1-i);
         ans = min(R[distance(Rv.begin(),upper)+1].second+(K-1-i),ans);
     }
     if (ans==1<<30)
