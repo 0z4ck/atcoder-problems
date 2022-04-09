@@ -86,17 +86,24 @@ void solve(long long N, long long K, std::vector<long long> A){
     long long tail_max = A[K];
     long long pad_min = A[K-2];
     long long pivot = A[K-1];
+    long long r=K-1;
+    long long l=K-1;
 
-    for(long long i=0;K+i<N&&K-2-i>-1;i++){
-        tail_max = max(tail_max, A[K+i]);
-        pad_min = min(pad_min, A[K-2-i]);
-        if(tail_max>pivot){
-            cout<<i+1<<endl;
-            return;
+    for(long long i=0;K+i<N||K-2-i>-1;i++){
+
+        if (K+i<N){
+            tail_max = max(tail_max, A[K+i]);
+            if(tail_max>pivot){
+                cout<<i+1<<endl;
+                return;
+            }
         }
-        if (tail_max>pad_min){
-            cout<<i+2<<endl;
-            return;
+        if (K-2-i>-1){
+            pad_min = min(pad_min, A[K-2-i]);
+            if (tail_max>pad_min){
+                cout<<i+2<<endl;
+                return;
+            }
         }
     }
     cout<< -1<<endl;
