@@ -98,7 +98,7 @@ void solve(long long N, long long K, std::vector<long long> A){
         auto upper = upper_bound(Rv.begin(), Rv.end(), A[i]);
         if (upper==Rv.end()){
             DBG("NO for ");cerr<<A[i]<<endl;
-            return;
+            continue;
         }
         //cout<< distance(R.begin(),upper)+1 <<endl;
     }
