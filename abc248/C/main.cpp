@@ -101,7 +101,7 @@ void solve(long long N, long long M, long long K){
     
         for(long long i=1;i<N;i++){
             for(long long j=i+1;j<K+1;j++){
-                for(long long k=max(K-M,i);k<j&&k-i<M;k++){
+                for(long long k=max(j-M,i);k<j&&k-i<M;k++){
                     DBG(i);DBG(j);DBG(k);DBG(dp[i][j]);DBGln(dp[i-1][k]);
                     dp[i][j] = (dp[i][j] + dp[i-1][k]) %MOD;
                     //dp[acc][i][j] = (dp[acc][i][j] + dp[acc][i-1][k]) %MOD;
