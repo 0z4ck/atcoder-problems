@@ -92,16 +92,14 @@ void solve(long long N, long long K, std::vector<long long> A){
     }
     sort(all(R));
     sort(all(Rv));
-    DBG(R);
+    //DBG(R);
     long long ans = 1<<30;
     for(int i=K-1;i>=0;i--){
         auto upper = upper_bound(Rv.begin(), Rv.end(), A[i]);
         if (upper==Rv.end()){
-            cerr<<A[i]<<endl;
+            //cerr<<A[i]<<endl;
             continue;
         }
-        DBG(R[distance(Rv.begin(),upper)]);
-        DBGln(K-1-i);
         ans = min(R[distance(Rv.begin(),upper)].second+(K-i),ans);
     }
     if (ans==1<<30)
