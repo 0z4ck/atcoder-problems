@@ -83,7 +83,7 @@ const long long MOD = 998244353;
 
 void solve(long long N, long long M, long long K){
 
-    vector<long long> dp(M+1);
+    vector<long long> dp(K+1);
     dp[0]=0;
     dp[1]=0;
 
