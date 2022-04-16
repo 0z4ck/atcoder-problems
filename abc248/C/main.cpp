@@ -86,6 +86,8 @@ void solve(long long N, long long M, long long K){
     //vector<vector<vector<long long>>> dp(N+1, vector<vector<long long>>(N,vector<long long>(K+1,0)));
     vector<vector<long long>> dp(N,vector<long long>(K+1,0));
     
+    long long ans=0;
+
     for(long long acc=1;acc<N;acc++){
         for(long long i=1;i<M+1;i++)
             dp[0][i]=1;
@@ -98,20 +100,22 @@ void solve(long long N, long long M, long long K){
         dp[1][4] = d[0][1]+dp[0][2]+dp[0][3];
     
         */
+        long long i,j,k;
     
-        for(long long i=1;i<N;i++){
-            for(long long j=i+1;j<K+1;j++){
-                for(long long k=max(j-M,i);k<j&&k-i<M;k++){
+        for(i=1;i<N;i++){
+            for(j=i+1;j<K+1;j++){
+                for(k=max(j-M,i);k<j&&k-i<M;k++){
                     //DBG(i);DBG(j);DBG(k);DBG(dp[i][j]);DBGln(dp[i-1][k]);
                     dp[i][j] = (dp[i][j] + dp[i-1][k]) %MOD;
                     //dp[acc][i][j] = (dp[acc][i][j] + dp[acc][i-1][k]) %MOD;
                 }
             }
         }
+        ans = (ans + dp[i][j])%MOD;
     }
-    long long ans=0;
+    /*
     for(long long acc=1;acc<K+1;acc++)
-        ans = (ans + dp[N-1][acc])%MOD;
+        ans = (ans + dp[N-1][acc])%MOD;*/
     //cout<<dp[N-1][K]<<endl;
     cout<<ans<<endl;
 }
