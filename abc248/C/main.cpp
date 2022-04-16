@@ -88,7 +88,6 @@ void solve(long long N, long long M, long long K){
     
     long long ans=0;
 
-    for(long long acc=1;acc<N;acc++){
         for(long long i=1;i<M+1;i++)
             dp[0][i]=1;
             //dp[acc][0][i]=1;
@@ -111,11 +110,8 @@ void solve(long long N, long long M, long long K){
                 }
             }
         }
-        ans = (ans + dp[i-1][j-1])%MOD;
-    }
-    /*
     for(long long acc=1;acc<K+1;acc++)
-        ans = (ans + dp[N-1][acc])%MOD;*/
+        ans = (ans + dp[N-1][acc])%MOD;
     //cout<<dp[N-1][K]<<endl;
     cout<<ans<<endl;
 }
