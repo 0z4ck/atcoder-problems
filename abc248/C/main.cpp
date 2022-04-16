@@ -84,19 +84,10 @@ const long long MOD = 998244353;
 void solve(long long N, long long M, long long K){
 
     vector<vector<long long>> dp(N+1,vector<long long>(K+1,0));
+    vector<vector<long long>> acc(N+1,vector<long long>(K+1,0));
     
     for(int i=1;i<M+1;i++)
         dp[0][i]=1;
-
-    dp[1][2] = dp[0][1];
-
-    dp[1][3] = dp[0][1]+dp[0][2];
-
-    dp[1][4] = dp[0][1]+dp[0][2]+dp[0][3];
-
-    dp[2][3] = dp[1][2];
-
-    dp[2][4] = dp[1][2]+dp[1][3];
 
     for(int i=1;i<N;i++){
         for(int j=i+1;j<K;j++){
