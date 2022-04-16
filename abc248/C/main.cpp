@@ -111,7 +111,7 @@ void solve(long long N, long long M, long long K){
                 }
             }
         }
-        ans = (ans + dp[i][j])%MOD;
+        ans = (ans + dp[i-1][j-1])%MOD;
     }
     /*
     for(long long acc=1;acc<K+1;acc++)
