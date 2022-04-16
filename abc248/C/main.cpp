@@ -91,6 +91,7 @@ void solve(long long N, long long M, long long K){
 
     for(int i=1;i<N;i++){
         for(int j=i+1;j<K;j++){
+            DBG(i);DBG(j);DBGln(dp[i][j]);
             for(int k=i;k<j&&k-i+1<M;k++)
                 dp[i][j] = (dp[i][j] + dp[i-1][k]) %MOD;
         }
