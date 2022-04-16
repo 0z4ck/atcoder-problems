@@ -88,7 +88,7 @@ void solve(long long N, long long M, long long K){
     dp[1]=0;
 
     for(int i=1;i<K;i++){
-        dp[i+1] = (i+dp[i])%MOD;
+        dp[i+1] = (i+dp[i]);
     }
     cout<<dp[K]<<endl;
 }
