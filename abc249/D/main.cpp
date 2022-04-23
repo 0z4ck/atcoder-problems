@@ -82,13 +82,15 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 
 void solve(long long N, std::vector<long long> A){
     sort(all(A));
-    int Ak, ans=0;
+    int Ak, dx, ans=0;
     for(int i=N;i--;){
         for(int j=0;A[j]*A[j]<=A[i];j++){
             if(A[i]%A[j])
                 continue;
             Ak = A[i]/A[j];
-            ans += upper_bound(A.begin(),A.end(),Ak)-lower_bound(A.begin(),A.end(),Ak);
+            dx = upper_bound(A.begin(),A.end(),Ak)-lower_bound(A.begin(),A.end(),Ak);
+            DBG(A[i]);DBG(A[j]);DBG(Ak);DBGln(dx);
+            ans+=dx;
         }
     }
     cout<<ans*2<<endl;
