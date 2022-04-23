@@ -88,7 +88,7 @@ void solve(long long N, std::vector<long long> A){
             if(A[i]%A[j])
                 continue;
             Ak = A[i]/A[j];
-            dx = upper_bound(A.begin(),A.end(),Ak)-lower_bound(A.begin(),A.end(),Ak);
+            dx = upper_bound(A.begin(),A.end(),Ak)-lower_bound(A.begin(),A.end(),Ak)-(Ak==A[i]);
             DBG(A[i]);DBG(A[j]);DBG(Ak);DBGln(dx);
             ans+=dx;
         }
