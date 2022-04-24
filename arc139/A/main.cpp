@@ -82,19 +82,20 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 
 void solve(long long N, std::vector<long long> T){
     long long a = 1;
+    long long one = 1;
     int ctz = 0;
     rep(i,N){
-        if (a<(1<<T[i])){
-            a = 1<<T[i];
+        if (a<(one<<T[i])){
+            a = one<<T[i];
             ctz = T[i];
         }else if (ctz>T[i]){
-            a = a | 1<<T[i];
+            a = a | one<<T[i];
             ctz = T[i];
         }else if(ctz<T[i]){
             a >> T[i];
             a++;
             a << T[i];
-            a = a | 1<<T[i];
+            a = a | one<<T[i];
             ctz - T[i];
         }
     }
