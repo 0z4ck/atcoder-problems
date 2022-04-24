@@ -92,24 +92,13 @@ void solve(long long N, std::vector<long long> T){
             a = a | one<<T[i];
             ctz = T[i];
         }else if(ctz<=T[i]){
-            DBG(T[i]);
             a = a >> T[i];
             a++;
             a = a|1;
-            DBG(T[i]);
             a = a << T[i];
             a = a | one<<T[i];
             ctz = T[i];
-        }else if(ctz<=T[i]){
-            a >> (T[i]+1);
-            a++;
-            a = a|1;
-            a = a << (T[i]+1);
-            a = a | one<<T[i];
-            ctz = T[i];
-        }else
-            cerr<<"some case not considered"<<endl;
-        DBG(a);DBGln(bitset<8>(a));
+        }
     }
     cout<< a <<endl;
 }
