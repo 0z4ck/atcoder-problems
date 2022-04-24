@@ -92,10 +92,13 @@ void solve(long long N, std::vector<long long> T){
             a = a | one<<T[i];
             ctz = T[i];
         }else if(ctz<=T[i]){
+            DBG(T[i]);
             a >> T[i];
             a++;
             a = a|1;
+            DBG(T[i]);
             a << T[i];
+            DBG(T[i]);
             a = a | one<<T[i];
             ctz = T[i];
         }else if(ctz<=T[i]){
