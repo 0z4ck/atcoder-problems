@@ -105,7 +105,7 @@ void solve(long long N, std::vector<long long> T){
             ctz = T[i];
         }else
             cerr<<"some case not considered"<<endl;
-        cerr << a <<endl;
+        DBG(a);DBGln(bitset<8>(a));
     }
     cout<< a <<endl;
 }
