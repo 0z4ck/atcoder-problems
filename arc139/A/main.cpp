@@ -96,8 +96,13 @@ void solve(long long N, std::vector<long long> T){
             a++;
             a << T[i];
             a = a | one<<T[i];
-            ctz - T[i];
-        }
+            ctz = T[i];
+        }/*else if(ctz==T[i]){
+            a >> (T[i]+1);
+            a++;
+            a << (T[i]+1);
+            a = | one<<T[i];
+        }*/
     }
     cout<< a <<endl;
 }
