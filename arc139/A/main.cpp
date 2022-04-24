@@ -105,6 +105,7 @@ void solve(long long N, std::vector<long long> T){
             ctz = T[i];
         }else
             cerr<<"some case not considered"<<endl;
+        cerr << a <<endl;
     }
     cout<< a <<endl;
 }
