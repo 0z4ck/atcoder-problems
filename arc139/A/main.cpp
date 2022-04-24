@@ -91,15 +91,17 @@ void solve(long long N, std::vector<long long> T){
         }else if (ctz>T[i]){
             a = a | one<<T[i];
             ctz = T[i];
-        }else if(ctz<T[i]&&false){
+        }else if(ctz<=T[i]){
             a >> T[i];
             a++;
+            a = a|1;
             a << T[i];
             a = a | one<<T[i];
             ctz = T[i];
         }else if(ctz<=T[i]){
             a >> (T[i]+1);
             a++;
+            a = a|1;
             a << (T[i]+1);
             a = a | one<<T[i];
             ctz = T[i];
