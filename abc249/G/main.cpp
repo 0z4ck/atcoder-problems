@@ -103,7 +103,7 @@ void solve(){
                 if ( trit == ( i /  pow(3, j) )% 3 && trit == 1 )
                     valid = false;
                 trit = ( i / pow(3, j) )% 3 ;
-                cout<< dic[trit]<<" ";
+                //cout<< dic[trit]<<" ";
             }
         }
         for(int x=0;x<n;x++){
