@@ -92,6 +92,19 @@ void solve(long long N, long long W, std::vector<long long> A){
                     seen[A[i]+A[j]+A[k]]=true;
                 }
             }
+    for(int i=0;i<N;i++)
+        for(int j=i+1;j<N;j++)
+                if(A[i]+A[j]<=W){
+                    if(!seen[A[i]+A[j]])
+                        ans++;
+                    seen[A[i]+A[j]]=true;
+                }
+    for(int i=0;i<N;i++)
+                if(A[i]<=W){
+                    if(!seen[A[i]])
+                        ans++;
+                    seen[A[i]]=true;
+                }
     cout<<ans<<endl;
 
 }
