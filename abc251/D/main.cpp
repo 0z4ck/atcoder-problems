@@ -85,7 +85,7 @@ void solve(long long W){
 
     int n = A.size();
     while(A[n-3]+A[n-2]+A[n-1]<W){
-        A.push_back(A[n-3]+A[n-2]+A[n-1]);
+        A.push_back(A[n-2]+A[n-1]+1);
         n = A.size();
     }
 
