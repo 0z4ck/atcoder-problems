@@ -83,17 +83,27 @@ const long long MOD = 10;
 
 void solve(long long N, std::vector<std::string> S){
     long long t, mint=1<<30 ;
+    bool flag=true;
+
+    int n;
+
     rep(i,10){
         t=0;
+        vector<bool> leeldispo(N,true);
+        n=0;
+        while(n==N){
 
-        rep(leel,N){
-        
-            
-            while(S[leel][t%10]!=i+'0'){
-                t++;
+            rep(leel,N){
+                if (!leeldispo[leel])
+                    continue;
+                if (S[leel][t%10]==i+'0'){
+                    leeldispo[leel]=true;
+                    t++;
+                    n++;
+                    break;
+                }
             }
             t++;
-        
         }
         mint = min(t,mint);
     
