@@ -88,6 +88,7 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
         maxA = (maxA,A[i]);
 
     rep(i,N){
+        DBG(maxA);DBG(A[i]);
         if (maxA!=A[i])
             continue;
         rep(j,K)
