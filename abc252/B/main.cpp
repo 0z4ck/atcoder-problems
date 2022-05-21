@@ -85,7 +85,7 @@ const string NO = "No";
 void solve(long long N, long long K, std::vector<long long> A, std::vector<long long> B){
     int maxA=0;
     rep(i,N)
-        maxA = (maxA,A[i]);
+        maxA = max(maxA,A[i]);
 
     rep(i,N){
         DBG(maxA);DBG(A[i]);
