@@ -90,7 +90,6 @@ void solve(long long N, std::vector<std::string> S){
         
             
             while(S[leel][t%10]!=i+'0'){
-                //DBG(S[leel][t%10]);DBGln(i);
                 t++;
             }
             t++;
@@ -98,6 +97,7 @@ void solve(long long N, std::vector<std::string> S){
         }
         mint = min(t,mint);
     
+        DBG(i);DBGln(t);
     
     }
     cout <<mint-1 <<endl;
