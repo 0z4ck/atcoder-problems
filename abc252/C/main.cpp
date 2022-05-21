@@ -108,7 +108,7 @@ void solve(long long N, std::vector<std::string> S){
         }
         mint = min(t,mint);    
         DBG(i);DBGln(t);
-        cout<<"----------------------------------"<<endl;
+        cerr<<"----------------------------------"<<endl;
     
     }
     cout <<mint<<endl;
