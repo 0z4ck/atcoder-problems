@@ -91,8 +91,10 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
         if (maxA!=A[i])
             continue;
         rep(j,K)
-            if (B[j]==i+1)
-                cout << YES <<endl;    
+            if (B[j]==i+1){
+                cout << YES <<endl;
+                return;
+            }    
     }
     cout << NO <<endl;
 
