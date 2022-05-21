@@ -81,11 +81,11 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 }
 
 void solve(long long W){
-    vector<int> A{1,2,3};
+    vector<int> A{1,1,2,3};
 
     int n = A.size();
     while(A[n-3]+A[n-2]+A[n-1]<W){
-        A.push_back(A[n-2]+A[n-1]+1);
+        A.push_back(A[n-2]+A[n-1]);
         n = A.size();
     }
 
