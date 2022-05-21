@@ -83,7 +83,7 @@ const string YES = "Yes";
 const string NO = "No";
 
 void solve(long long N, long long K, std::vector<long long> A, std::vector<long long> B){
-    int maxA=0;
+    long long maxA=0;
     rep(i,N)
         maxA = max(maxA,A[i]);
 
