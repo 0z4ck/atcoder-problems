@@ -89,7 +89,7 @@ void solve(long long N, std::vector<std::string> S){
         rep(leel,N){
         
             
-            while(S[leel][t%10]!=i){
+            while(S[leel][t%10]!=i+'0'){
                 DBG(S[leel][t%10]);DBGln(i);
                 t++;
             }
