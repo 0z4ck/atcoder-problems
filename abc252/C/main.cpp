@@ -88,7 +88,9 @@ void solve(long long N, std::vector<std::string> S){
 
         rep(leel,N){
         
+            
             while(S[leel][t%10]!=i){
+                DBG(S[leel][t%10]);DBGln(i);
                 t++;
             }
             t++;
