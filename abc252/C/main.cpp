@@ -99,7 +99,7 @@ void solve(long long N, std::vector<std::string> S){
                 DBG(leel);DBG(t);
                 if (S[leel][t%10]==i+'0'){
                     leeldispo[leel]=true;
-                    t++;
+                    //t++;
                     n++;
                     break;
                 }
