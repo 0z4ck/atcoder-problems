@@ -91,7 +91,7 @@ void solve(long long N, std::vector<std::string> S){
         t=0;
         vector<bool> leeldispo(N,true);
         n=0;
-        while(n==N){
+        while(n!=N){
 
             rep(leel,N){
                 if (!leeldispo[leel])
