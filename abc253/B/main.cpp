@@ -90,6 +90,7 @@ void solve(long long H, long long W, std::vector<std::string> S){
             if(S[i][j]=='o' && !isx1){
                 x1 = i;
                 y1 = j;
+                isx1 = true;
             }else if(S[i][j]=='o'){
                 x2 = i;
                 y2 = j;
