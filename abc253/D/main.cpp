@@ -81,11 +81,11 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 }
 
 void solve(long long N, long long A, long long B){
-    long long ans = N*(N+1)/2;
+    unsigned long long ans = N*(N+1)/2;
 
-    long long Anum = N/A;
-    long long Bnum = N/B;
-    long long ABnum = N/(A*B);
+    unsigned long long Anum = N/A;
+    unsigned long long Bnum = N/B;
+    unsigned long long ABnum = N/(A*B);
     DBG(ans);
     DBG(Anum);
     DBGln(Anum*(A+A*Anum)/2);
