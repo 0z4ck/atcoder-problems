@@ -87,6 +87,7 @@ void solve(long long H, long long W, std::vector<std::string> S){
     rep(i,H)
         rep(j,H){
             if(S[i][j]=='o'){
+                DBG(i);DBGln(j);
                 x.push_back(i);
                 y.push_back(j);
             }
