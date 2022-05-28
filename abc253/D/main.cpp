@@ -86,17 +86,17 @@ void solve(unsigned long long N, unsigned long long A, unsigned long long B){
     unsigned long long Anum = N/A;
     unsigned long long Bnum = N/B;
     unsigned long long ABnum = N/(A*B);
-    DBG(ans);
+    /*DBG(ans);
     DBG(Anum);
     DBGln(Anum*(A+A*Anum)/2);
-
+    */
     ans -=  Anum*(A+A*Anum)/2;
 
     ans -= Bnum*(B+B*Bnum)/2;
 
     ans += ABnum * (A*B+A*B*ABnum)/2;
 
-    DBGln(ABnum * (A*B+A*B*ABnum)/2);
+    //DBGln(ABnum * (A*B+A*B*ABnum)/2);
     
     cout << ans<<endl;
 
