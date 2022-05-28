@@ -82,8 +82,10 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 
 void solve(long long N, long long A, long long B){
     long long ans = N*(N+1)/2;
+    DBG(ans);
 
     ans -= (N/A) * (N/A)*A/2;
+    cerr<< (N/A) * (N/A)*A/2<< endl;
     ans -= (N/B) * (N/B)*B/2;
 
     ans += (N/(A*B)) * (N/(A*B))*(A*B)/2;
