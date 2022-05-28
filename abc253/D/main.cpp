@@ -85,16 +85,18 @@ void solve(long long N, long long A, long long B){
 
     long long Anum = N/A;
     long long Bnum = N/B;
-    
+    long long ABnum = N/(A*B);
     DBG(ans);
     DBG(Anum);
     DBGln(Anum*(A+A*Anum)/2);
 
-    ans -=  Anum * (N/A)*A/2;
-    cerr<< (N/A) * (N/A)*A/2<< endl;
-    ans -= (N/B) * (N/B)*B/2;
+    ans -=  Anum*(A+A*Anum)/2;
 
-    ans += (N/(A*B)) * (N/(A*B))*(A*B)/2;
+    ans -= Bnum*(B+B*Bnum)/2;
+
+    ans += ABnum * (A*B+ABnum)/2;
+
+    DBGln(ABnum * (A*B+ABnum)/2);
     cout << ans<<endl;
 
 }
