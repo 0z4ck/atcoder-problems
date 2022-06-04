@@ -123,6 +123,8 @@ void solve(long long N){
         for(int d=2;d<sqrt(i)+1;d++){
             if(i%d)
                 continue;
+            DBG(i);
+            DBG(d);
             cnt+=2;
         }
     }
