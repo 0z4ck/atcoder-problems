@@ -120,7 +120,7 @@ void solve(long long N){
 
     //cout << divisor_num(N) << endl;
     for(int i=1;i<N+1;i++){
-        for(int d=2;d<sqrt(i)+1;d++){
+        for(int d=2;d<floor(sqrt(i))+1;d++){
             if(i%d)
                 continue;
             DBG(i);
