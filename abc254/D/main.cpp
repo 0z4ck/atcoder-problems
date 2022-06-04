@@ -121,9 +121,11 @@ void solve(long long N){
     rep(i,N)
         rep(j,N)
             if(sqrt((i+1)*(j+1))==floor(sqrt((i+1)*(j+1)))){
+                cnt++;
+                if(i==j)
+                    continue;
                 DBG(i+1);
                 DBGln(j+1);
-                cnt++;
             }
 
     //cout << divisor_num(N) << endl;
