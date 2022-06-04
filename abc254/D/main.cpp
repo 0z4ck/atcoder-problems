@@ -125,8 +125,8 @@ void solve(long long N){
                 continue;
             if((i/d)%d)
                 continue;
-            DBG(i);
-            DBGln(d);
+            DBG(i/d/d);
+            DBGln(i);
             cnt+=2;
         }
     }
