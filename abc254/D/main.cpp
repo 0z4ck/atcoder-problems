@@ -123,7 +123,7 @@ void solve(long long N){
         for(int d=2;d<sqrt(i)+1;d++){
             if(i%d)
                 continue;
-            cnt+=2
+            cnt+=2;
         }
     }
 
