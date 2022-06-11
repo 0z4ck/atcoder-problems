@@ -85,6 +85,7 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
     for(int i=0;i<N;i++)
         for(int j=i+1;j<N;j++){
             long long dist = (X[i]-X[j])*(X[i]-X[j]) + (Y[i]-Y[j])*(Y[i]-Y[j]);
+            DBG(i);DBG(j);DBGln(dist);
             D[i][j]=dist;
             D[j][i]=dist;
         }
