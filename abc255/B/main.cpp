@@ -85,7 +85,6 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
     for(int i=0;i<N;i++)
         for(int j=i+1;j<N;j++){
             long long dist = (X[i]-X[j])*(X[i]-X[j]) + (Y[i]-Y[j])*(Y[i]-Y[j]);
-            DBG(i);DBG(j);DBGln(dist);
             D[i][j]=dist;
             D[j][i]=dist;
         }
@@ -97,7 +96,6 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
             if(A[i]-1==j)
                 continue;
             maxfl[j]=min(maxfl[j],D[A[i]-1][j]);
-            DBG(A[i]-1);DBG(j);DBGln(maxfl[j]);
         }
     }
 
@@ -105,7 +103,6 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
     long long maxmin=0;
 
     rep(i,N){
-        //DBG(maxfl[i]);
         if(maxfl[i]==90000000000)
             continue;
         maxmin = max(maxmin,maxfl[i]);
