@@ -103,6 +103,7 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
     long long maxmin=0;
 
     rep(i,N){
+        DBG(maxfl[i]);
         if(maxfl[i]==1<<30)
             continue;
         maxmin = max(maxmin,maxfl[i]);
