@@ -96,8 +96,8 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
         rep(j,N){
             if(A[i]-1==j)
                 continue;
-            DBG(A[i]-1);DBG(j);DBGln(maxfl[j]);
             maxfl[j]=min(maxfl[j],D[A[i]-1][j]);
+            DBG(A[i]-1);DBG(j);DBGln(maxfl[j]);
         }
     }
 
