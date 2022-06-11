@@ -89,7 +89,7 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
             D[i][j]=dist;
             D[j][i]=dist;
         }
-    vector<long long> maxfl(N,1<<30);
+    vector<long long> maxfl(N,1<<62);
 
 
     rep(i,K){
@@ -105,7 +105,7 @@ void solve(long long N, long long K, std::vector<long long> A, std::vector<long 
 
     rep(i,N){
         DBG(maxfl[i]);
-        if(maxfl[i]==1<<30)
+        if(maxfl[i]==1<<62)
             continue;
         maxmin = max(maxmin,maxfl[i]);
     
