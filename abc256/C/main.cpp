@@ -95,8 +95,12 @@ void solve(std::vector<long long> h, std::vector<long long> w){
                     int o= w[0]-i-l;
                     int p= w[1]-j-m;
                     int q= w[2]-k-n;
-                    if(o+p+q==h[2])
+                    if(o+p+q==h[2]){
+                        cerr<<i<<j<<k <<endl;
+                        cerr<<l<<m<<n <<endl;
+                        cerr<<o<<p<<q <<endl;
                         count++;
+                    }
                 }
             }
 
