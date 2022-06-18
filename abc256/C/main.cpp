@@ -99,6 +99,7 @@ void solve(std::vector<long long> h, std::vector<long long> w){
                         cerr<<i<<j<<k <<endl;
                         cerr<<l<<m<<n <<endl;
                         cerr<<o<<p<<q <<endl;
+                        cerr<<endl;
                         count++;
                     }
                 }
