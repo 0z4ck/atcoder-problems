@@ -82,32 +82,33 @@ std::ostream& operator<<(std::ostream& s, std::set<T> stt){
 
 void solve(std::vector<long long> h, std::vector<long long> w){
     long long count=0;
-    for(int i=1;i<30;i++){
-        for(int j=1; j<30; j++){
-            if(i+j>h[0]-1)
-                break;
-            int k = h[0] - i - j;
-            for(int l=1; l<30;l++){
-                for(int m=1; m<30; m++){
-                    if(l+m>h[1]-1)
-                        break;
-                    int n = h[1] - l - m;
-                    int o= w[0]-i-l;
-                    int p= w[1]-j-m;
-                    int q= w[2]-k-n;
-                    if(!(o&&p&&q))
-                        continue;
-                    if(o+p+q==h[2]){
-                        /*cerr<<i<<j<<k <<endl;
-                        cerr<<l<<m<<n <<endl;
-                        cerr<<o<<p<<q <<endl;
-                        cerr<<endl;
-                        */
-                        count++;
-                    }
-                }
+    vector<vector<int>> h0, h1, h2;
+    for (int i=1; i<=30; i++) {
+        for (int j=1; j<=30; j++) {
+            for (int k=1; k<=30; k++) {
+                if (i+j+k == h[0]) h0.push_back({i, j, k});
             }
-
+        }
+    }
+    for (int i=1; i<=30; i++) {
+        for (int j=1; j<=30; j++) {
+            for (int k=1; k<=30; k++) {
+                if (i+j+k == h[1]) h1.push_back({i, j, k});
+            }
+        }
+    }
+    for (int i=1; i<=30; i++) {
+        for (int j=1; j<=30; j++) {
+            for (int k=1; k<=30; k++) {
+                if (i+j+k == h[2]) h2.push_back({i, j, k});
+            }
+        }
+    }
+    for (auto aaa:h0){
+        for (auto bbb:h1){
+            for (auto ccc:h2){
+                if (aaa[0]+bbb[0]+ccc[0]==w[0]&&aaa[1]+bbb[1]+ccc[1]==w[1]&&aaa[2]+bbb[2]+ccc[2]==w[2]) count++;
+            }
         }
     }
     cout<<count<<endl;
